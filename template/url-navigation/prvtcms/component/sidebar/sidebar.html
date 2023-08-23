@@ -1,0 +1,41 @@
+<div class="d-none d-md-block bt-sidebar" id="sidebar">
+  <ul class="tree-menu">
+    {%#navs%}
+      {%^child.length%}
+      <!-- 无子项菜单，则绑定链接。 -->
+      {%^external_link.length%}
+      <li class="d-block {%active%}"><a href="{%link%}" class2="d-block d-md-none">{%#icon.length%}<i class="bi bi-{%icon%}"></i>{%/icon.length%}{%title%}</a>
+      {%/external_link.length%}
+      {%#external_link.length%}
+      <li class="d-block {%active%}"><a href="{%link%}.html" class2="d-block d-md-none">{%#icon.length%}<i class="bi bi-{%icon%}"></i>{%/icon.length%}{%title%}</a>
+      {%/external_link.length%}
+      {%/child.length%}
+      
+      {%#child.length%}
+      <!-- 有子项菜单，不绑定链接，可展开折叠子项。 -->
+      <li class="d-block {%active%} {%childActive%} collapsed"><a class2="d-block d-md-none">{%#icon.length%}<i class="bi bi-{%icon%}"></i>{%/icon.length%}{%title%}</a>
+      <ul>
+        {%#child%}
+        
+          {%#>template_sidebar%}
+          <li class="{%active%}">
+            {%^child.length%}
+            <a href="/#id{%id%}">{%#icon.length%}<i class="bi bi-{%icon%}"></i>{%/icon.length%}{%title%}</a>
+            {%/child.length%}
+
+            {%#child.length%}
+            <a>{%#icon.length%}<i class="bi bi-{%icon%}"></i>{%/icon.length%}{%title%}</a>
+            <ul>
+              {%#child%}{%>template_sidebar%}{%/child%}
+            </ul>
+            {%/child.length%}
+          </li>
+          {%/>template_sidebar%}
+
+        {%/child%}
+      </ul>
+      {%/child.length%}
+      </li>
+    {%/navs%}
+  </ul>
+</div>

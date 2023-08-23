@@ -1,0 +1,47 @@
+a.link-app {
+    color: #333;
+}
+
+.link-app .card {
+    padding: 1.25rem;
+    background: linear-gradient(90deg, rgb(249 249 249) 30%, rgb(245 245 245) 90%);
+}
+
+.link-app .card:hover { 
+    box-shadow: 0px 0px 10px 0px #555;
+    transform: scale(1.025);
+    transition: all 0.25s;
+}
+
+.link-app .card-title {
+    margin-bottom: 0;
+}
+
+
+.link-app .card .col-logo {
+    width: 2.5rem;
+    background: no-repeat center center;
+    background-size: contain;
+}
+
+.link-app .card-body {
+    position: relative;
+    min-height: 2.5rem;
+    padding: 0 0.55rem;
+}
+
+.link-app .card-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 1px solid transparent;
+    margin-top: -0.61rem;
+    padding: 0.55rem;
+    padding-left: 0.50rem;
+    color: #555555;
+    font-weight: 300;
+}
+
+.link-app .card:hover {
+    z-index: 9;
+}

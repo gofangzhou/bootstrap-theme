@@ -1,0 +1,15 @@
+<nav class="navbar fixed-top navbar-expand-md bg-body-tertiary navbar-header">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">{%site_info_nick_name%}</a>
+    <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar"><i class="bi bi-signpost-split-fill"></i></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        {%#navs%}
+        <li class="nav-item"><a class="nav-link" href="{%link%}">{%#icon.length%}<i class="bi bi-{%icon%}"></i>{%/icon.length%}{%title%}</a></li>
+        {%/navs%}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  

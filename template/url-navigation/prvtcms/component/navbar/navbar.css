@@ -1,0 +1,27 @@
+/* 顶部 */
+.navbar-header {
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.navbar-header>div {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-header .navbar-brand {
+    text-transform: uppercase;
+    width: 240px;
+    text-align: center;
+    background-color: #ecf4fc;
+    padding: 1.25rem 0;
+}
+
+@media (max-width:768px) {
+    .navbar-header {
+        padding-right: 3rem;
+    }
+    .navbar-header .navbar-brand{
+        background-color: transparent;
+    }
+}

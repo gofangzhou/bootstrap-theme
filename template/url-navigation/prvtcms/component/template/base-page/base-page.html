@@ -1,0 +1,69 @@
+<!-- @Register "master" to <v:master>  -->
+<!-- @Register "header" to <c:header>  -->
+<!-- @Register "footer" to <c:footer>  -->
+<!-- @Register "component/sidebar" to <c:sidebar>  -->
+<!-- @Register "component/searchbar" to <c:searchbar>  -->
+
+<!-- @Register "component/image-text-item" to <item:img-txt>  -->
+<!-- @Register "component/image-item" to <item:img>  -->
+<!-- @Register "component/image-item-cols" to <item:img-cols>  -->
+
+<v:master>
+    <master:bodyer>
+        <div class="container-fluid">
+            <c:header></c:header>
+            <div class="row">
+                <c:sidebar></c:sidebar>
+                <!-- content begin -->
+                <div class="col bt-content">
+                    <div>
+                        <template:container></template:container>
+                    </div>
+                    <c:footer></c:footer>
+                </div>
+                <!-- content end -->
+            </div>
+        </div>
+    </master:bodyer>
+    <master:footer>
+        <script type="text/javascript">
+            (function(){
+                const collogos = Array.from(document.getElementsByClassName('col-logo'));
+                collogos.forEach(function(element){
+                    const url = element.getAttribute('data-css-background-image');
+                    element.style.backgroundImage = `url(${url})`;
+                })
+    
+                document.getElementById('sidebar').addEventListener('click', function(event){
+                    let target;
+                    if(event.target.tagName == 'A'){
+                        target = event.target.parentElement;
+                    }
+                    else if(event.target.tagName == 'LI'){
+                        target = event.target;
+                    }
+                    if(target){
+                        const lis = target.getElementsByTagName('li');
+                        lis.length && (target.classList.contains('collapsed')?target.classList.remove('collapsed'):target.classList.add('collapsed'));
+                    }
+                });
+    
+                const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+                const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => {
+                    const card_text = tooltipTriggerEl.getElementsByClassName('card-text');
+                    if(card_text && card_text.length){
+                        tooltipTriggerEl.setAttribute('data-bs-title', card_text[0].innerText);
+                    }
+                    return new bootstrap.Tooltip(tooltipTriggerEl);
+                })
+            })()
+        </script>
+        
+        <!--
+        <script type="text/javascript">
+        hljs.highlightAll();
+        </script> 
+        -->
+    </master:footer>
+</v:master>
+        

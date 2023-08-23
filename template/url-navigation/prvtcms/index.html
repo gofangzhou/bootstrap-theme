@@ -1,0 +1,31 @@
+<!-- @Register "component/template/search" to <v:page>  -->
+<v:page>
+    <page:container-search-next>
+        {%#navs%}
+        {%#child%}
+        <h5 class="mb-3 pt-3 pb-3">{%#icon.length%}<i class="bi bi-{%icon%}"></i>{%/icon.length%}{%title%}</h5>
+        <span style="position:absolute;margin-top:-200px;"  id="id{%id%}"></span>
+        <div class="row">
+            {%#arrayFunctions%}
+            {%#news.filter=>(type_id==@id)%}
+
+            {%#flag_type=='list_image_text_cols'%}
+            <item:img-txt></item:img-txt>
+            {%/flag_type=='list_image_text_cols'%}
+
+            {%#flag_type=='list_image_rows'%}
+            <item:img></item:img>
+            {%/flag_type=='list_image_rows'%}
+
+            {%#flag_type=='list_image_cols'%}
+            <item:img-cols></item:img-cols>
+            {%/flag_type=='list_image_cols'%}
+            
+            
+            {%/news.filter=>(type_id==@id)%}
+            {%/arrayFunctions%}
+        </div>
+        {%/child%}
+        {%/navs%}
+    </page:container-search-next>
+</v:page>

@@ -1,0 +1,18 @@
+<div class="searchbar">
+    <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link active" href="#">搜索</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">对话</a></li>
+    </ul>
+    <form class="mt-3">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="想你所想！" aria-label="想你所想！" aria-describedby="button-addon2" 
+                onkeydown="if(arguments[0].keyCode == 13) {window.location.href='/search/' + this.value + '/1';return false;}" >
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                onclick="if($(this).prev().val().length==0){return false;} window.location.href='/search/' + $(this).prev().val() + '/1';return false;"
+                >搜索</button>
+            </div>
+        </div>
+    </form>
+    <img src="/statics/gif.gif" style="width:100%;"/>
+</div>
